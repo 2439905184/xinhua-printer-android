@@ -8,6 +8,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -32,22 +33,27 @@ public class CustomPrinter extends Activity
         setContentView(R.layout.activity_custom_printer);
         item_name = findViewById(R.id.item_name);
         item_price = findViewById(R.id.item_price);
+        Button v_add_item = findViewById(R.id.add);
+        v_add_item.setOnClickListener(new Adder());
     }
     //添加商品
-    public void add_item(View v)
+    class Adder implements View.OnClickListener
     {
-        LinearLayout linearLayout = new LinearLayout(this);
-        linearLayout.setOrientation(LinearLayout.HORIZONTAL);
-        TextView v_item = new TextView(this);
-        TextView v_item_price = new TextView(this);
+        @Override
+        public void onClick(View v)
+        {
+            LinearLayout linearLayout = new LinearLayout(CustomPrinter.this);
+            linearLayout.setOrientation(LinearLayout.HORIZONTAL);
+            TextView v_item = new TextView(CustomPrinter.this);
+            TextView v_item_price = new TextView(CustomPrinter.this);
 
-        v_item.setText(item_name.getText().toString());
-        v_item_price.setText(item_price.getText().toString());
+            v_item.setText(item_name.getText().toString());
+            v_item_price.setText(item_price.getText().toString());
 
-        linearLayout.addView(v_item);
-        linearLayout.addView(item_price);
-        sample();
-        //linearLayout.setLayoutDirection(ViewGroup.);
+            linearLayout.addView(v_item);
+            linearLayout.addView(item_price);
+            sample();
+        }
     }
     //票据标签
     private void sample()
@@ -87,33 +93,6 @@ public class CustomPrinter extends Activity
 
                 list.add(DataForSendToPrinterPos58.endOfLable());
                 return list;
-
-               /* list.add(DataForSendToPrinterPos58.openOrCloseLableModelInReceip(true));
-                list.add(DataForSendToPrinterPos58.setTheLableWidth(40));
-                list.add(DataForSendToPrinterPos58.initializePrinter());
-                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(50,00));//设置初始位置
-                list.add(DataForSendToPrinterPos58.selectCharacterSize(17));//字体放大一倍
-                list.add(StringUtils.strTobytes("商品"));
-                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(250,00));
-                list.add(StringUtils.strTobytes("价格"));
-                list.add(DataForSendToPrinterPos58.printAndFeedLine());
-                list.add(DataForSendToPrinterPos58.printAndFeedLine());
-
-                list.add(DataForSendToPrinterPos58.initializePrinter());
-                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(30,00));
-                list.add(StringUtils.strTobytes("黄焖鸡"));
-                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(220,00));
-                list.add(StringUtils.strTobytes("5元"));
-                list.add(DataForSendToPrinterPos58.printAndFeedLine());
-
-                list.add(DataForSendToPrinterPos58.initializePrinter());
-                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(30,00));
-                list.add(StringUtils.strTobytes("黄焖鸡呀"));
-                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(220,00));
-                list.add(StringUtils.strTobytes("6元"));
-                list.add(DataForSendToPrinterPos58.printAndFeedLine());
-                list.add(DataForSendToPrinterPos58.endOfLable());
-                return list;*/
             }
         });
     }else {

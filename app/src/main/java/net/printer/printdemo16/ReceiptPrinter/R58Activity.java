@@ -39,7 +39,7 @@ public class R58Activity extends AppCompatActivity implements View.OnClickListen
         text = findViewById(R.id.bt_58text);
         barcode = findViewById(R.id.bt_58barcode);
         qrcode = findViewById(R.id.bt_58qr);
-       // bitmap = findViewById(R.id.bt_58bitmap);
+        bitmap = findViewById(R.id.bt_58bitmap2);
 
         sample.setOnClickListener(this);
         text.setOnClickListener(this);
@@ -51,40 +51,33 @@ public class R58Activity extends AppCompatActivity implements View.OnClickListen
 
 
     @Override
-    public void onClick(View view) {
-
+    public void onClick(View view)
+    {
         int id = view.getId();
 
-        if (id==R.id.bt_rcp){
+        if (id==R.id.bt_rcp)
+        {
             printSample();
         }
 
-        if(id== R.id.bt_58text){
+        if(id== R.id.bt_58text)
+        {
             printText();
         }
 
-        if (id== R.id.bt_58barcode){
+        if (id== R.id.bt_58barcode)
+        {
             printBarcode();
         }
 
-        if (id== R.id.bt_58qr){
+        if (id== R.id.bt_58qr)
+        {
             printqr();
         }
-
-       /* if(id== R.id.bt_58bitmap){
-
+        if(id== R.id.bt_58bitmap2)
+        {
             printBitmap();
-
-        }*/
-
-
-
-    }
-    //小沙盒添加的代码
-    public void gotoCustom(View v)
-    {
-        Intent i = new Intent(this, CustomPrinter.class);
-        startActivity(i);
+        }
     }
     /**
      * 打印样张
@@ -300,7 +293,7 @@ public class R58Activity extends AppCompatActivity implements View.OnClickListen
                     for (int i= 0 ;i<blist.size();i++){
                         list.add(DataForSendToPrinterPos80.printRasterBmp(0,blist.get(i), BitmapToByteData.BmpType.Threshold, BitmapToByteData.AlignType.Center,384));
                     }
-//                    list.add(StringUtils.strTobytes("1234567890qwertyuiopakjbdscm nkjdv mcdskjb"));
+                    list.add(StringUtils.strTobytes("1234567890qwertyuiopakjbdscm nkjdv mcdskjb"));
                     list.add(DataForSendToPrinterPos80.printAndFeedLine());
                     return list;
                 }

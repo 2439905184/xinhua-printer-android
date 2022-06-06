@@ -6,4 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".CustomR58">
 
+    <Button
+        android:id="@+id/bt_custom"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@drawable/customer_button_selector"
+        android:onClick="gotoCustom"
+        android:text="打印自定义订单(BitMap)"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="15dp" />
 </android.support.constraint.ConstraintLayout>

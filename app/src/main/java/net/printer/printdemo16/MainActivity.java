@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
         disconnect = findViewById(R.id.disconnect);
         pos58 = findViewById(R.id.bt_pos58);
         pos80 = findViewById(R.id.bt_pos80);
-//        tsc58 = findViewById(R.id.bt_tsc58);
+      //  tsc58 = findViewById(R.id.bt_tsc58);
         tsc80 = findViewById(R.id.bt_tsc80);
         other = findViewById(R.id.bt_other);
 
@@ -170,7 +170,9 @@ public class MainActivity extends AppCompatActivity  implements View.OnClickList
 
         if (id == R.id.bt_pos58){
             if (ISCONNECT){
-                Intent intent = new Intent(this, R58Activity.class);
+               /* Intent intent = new Intent(this, R58Activity.class);
+                startActivity(intent);*/
+                Intent intent = new Intent(this,CustomR58.class);
                 startActivity(intent);
             }else {
                 Toast.makeText(getApplicationContext(),getString(R.string.connect_first),Toast.LENGTH_SHORT).show();

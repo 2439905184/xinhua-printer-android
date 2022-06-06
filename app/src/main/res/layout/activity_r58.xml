@@ -44,14 +44,5 @@
         android:layout_width="match_parent"
         android:layout_height="45dp" />
 
-    <Button
-        android:id="@+id/bt_custom"
-        android:layout_width="match_parent"
-        android:layout_height="45dp"
-        android:layout_margin="15dp"
-        android:background="@drawable/customer_button_selector"
-        android:onClick="gotoCustom"
-        android:text="打印自定义订单" />
-
 
 </LinearLayout>
