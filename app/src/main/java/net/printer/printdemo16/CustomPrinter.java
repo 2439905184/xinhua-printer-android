@@ -42,7 +42,8 @@ public class CustomPrinter extends Activity
         @Override
         public void onClick(View v)
         {
-            LinearLayout linearLayout = new LinearLayout(CustomPrinter.this);
+            Toast.makeText(CustomPrinter.this,"测试文本",Toast.LENGTH_LONG).show();
+            /*LinearLayout linearLayout = new LinearLayout(CustomPrinter.this);
             linearLayout.setOrientation(LinearLayout.HORIZONTAL);
             TextView v_item = new TextView(CustomPrinter.this);
             TextView v_item_price = new TextView(CustomPrinter.this);
@@ -51,7 +52,7 @@ public class CustomPrinter extends Activity
             v_item_price.setText(item_price.getText().toString());
 
             linearLayout.addView(v_item);
-            linearLayout.addView(item_price);
+            linearLayout.addView(item_price);*/
             sample();
         }
     }
@@ -86,9 +87,9 @@ public class CustomPrinter extends Activity
 
                 list.add(DataForSendToPrinterPos58.initializePrinter());
                 list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(30,00));
-                list.add(StringUtils.strTobytes(item_name.getText().toString()));
+                list.add(StringUtils.strTobytes("测试商品名字"));
                 list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(220,00));
-                list.add(StringUtils.strTobytes(item_price.getText().toString()));
+                list.add(StringUtils.strTobytes("20"));
                 list.add(DataForSendToPrinterPos58.printAndFeedLine());
 
                 list.add(DataForSendToPrinterPos58.endOfLable());
