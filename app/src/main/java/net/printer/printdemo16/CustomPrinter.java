@@ -87,11 +87,16 @@ public class CustomPrinter extends Activity
 
                 list.add(DataForSendToPrinterPos58.initializePrinter());
                 list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(30,00));
-                list.add(StringUtils.strTobytes("测试商品名字"));
-                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(220,00));
-                list.add(StringUtils.strTobytes("20"));
-                list.add(DataForSendToPrinterPos58.printAndFeedLine());
+                //取商品信息
+                item_name = findViewById(R.id.item_name);
+                item_price = findViewById(R.id.item_price);
+                String name = item_name.getText().toString();
+                String price = item_price.getText().toString();
 
+                list.add(StringUtils.strTobytes(name));
+                list.add(DataForSendToPrinterPos58.setAbsolutePrintPosition(220,00));
+                list.add(StringUtils.strTobytes(price));
+                list.add(DataForSendToPrinterPos58.printAndFeedLine());
                 list.add(DataForSendToPrinterPos58.endOfLable());
                 return list;
             }
